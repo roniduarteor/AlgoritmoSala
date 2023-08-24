@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fatorial</title>
 </head>
 <body>
     <script>
@@ -12,20 +12,21 @@
         let num, divisores = 0
 
         num = Number(prompt("Insira um número"))
+        document.write(`Divisores de ${num}: <br>`)
 
         for(let i = 0; i <= num; i++){
                 if(num % i === 0){
                     divisores = divisores + i
-                    document.write(`${i}<br>`)
+                    document.write(`${i}, `)
                     
                 }
                 
             }
             if(divisores - num !== num){
-                document.write(`${num} não é perfeito`)
+                document.write(`<br>${num} não é perfeito`)
             }
             else{
-                document.write(`${num} é perfeito`)
+                document.write(`<br>${num} é perfeito`)
             }
         
             
