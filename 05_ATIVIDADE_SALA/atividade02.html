@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let chinchilas, anos
+        
+        
+        do{
+            chinchilas = Number(prompt("Quantas chinchilas você tem?"))
+
+            if(chinchilas < 2 || isNaN(chinchilas)){
+                alert("Digite um número válido, maior ou igual a 2")
+            }
+            
+        }while(chinchilas < 2 || isNaN(chinchilas))
+
+        anos = Number(prompt("Quantos anos você vai criar chinchilas?"))
+        
+        for(let i = 1; i <= anos; i++){
+            document.write(`Ano [${i}] - ${chinchilas} <br>`)
+
+            chinchilas = chinchilas * 3
+        }
+
+    </script>
+</body>
+</html>
