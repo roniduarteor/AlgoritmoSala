@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let num
+
+        alert("Digite [0] para sair do app")
+
+        while(num !== 0){
+        num = Number(prompt("Digite um número"))
+
+            if(isNaN(num)){
+                alert("Digite um número válido")
+                
+            }
+            else if(num === 0){
+                confirm("Deseja parar?")
+            }
+
+            else if(num % 2 === 0){
+                num = num * 2
+                alert(`valor: ${num}`)
+            }
+            else if(num % 2 !== 0){
+                num = num * 3
+                alert(`valor: ${num}`)
+            }
+        }
+            
+        
+
+    </script>
+</body>
+</html>

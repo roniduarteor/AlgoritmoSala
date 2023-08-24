@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let nota100, nota50, nota10, saque
+
+        saque = Number(prompt("Digite um valor para sacar:"))
+
+        if(saque % 10 === 0){
+        nota100 = parseInt(saque / 100)
+        nota50 = parseInt((saque % 100) / 50)
+        nota10 = parseInt(((saque % 100) % 50) / 10)
+
+        alert(`Notas de [100]: ${nota100}\nNotas de [50]: ${nota50}\nNotas de [10]: ${nota10}`)
+        }
+        else{
+            alert("Digite um com final [0]!")
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let genero, altura, pesoIdeal
+
+        altura = prompt("DIGITE SUA ALTURA  [em Metros]:")
+
+        if(isNaN(altura) || altura === 0 || altura >= 2.51){
+                    alert(`Digite uma altura válida! [${altura}]`)
+                location.reload()
+                }
+
+        genero = prompt("SELECIONE:\n[M] Masculino\n[F] Feminino")
+        genero = genero.toUpperCase()
+ 
+
+        if(genero === "M"){ // peso para HOMENS
+            pesoIdeal = 22 * (altura * altura)
+
+                alert(`Seu peso ideial é de [${pesoIdeal.toFixed(2)}Kg]`)
+        }
+
+        else if(genero === "F"){ // peso para MULHERES
+            pesoIdeal = 21 * (altura * altura)
+
+                alert(`Seu peso ideial é de [${pesoIdeal.toFixed(2)}Kg]`)
+        }
+
+        else{
+            alert("DIGITE APENAS [M] OU [F]!")
+            location.reload()
+        }
+
+    </script>
+</body>
+</html>

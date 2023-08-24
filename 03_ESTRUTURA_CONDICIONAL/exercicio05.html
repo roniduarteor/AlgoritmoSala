@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const veloMaxima = Number(prompt("Qual a velocidade máxima permitida?"))
+
+        const veloCondutor = Number(prompt("Qual a velocidade do condutor?"))
+
+
+        if(veloCondutor <= veloMaxima){
+            alert("Sem multa")
+        }
+
+        else if(veloCondutor > veloMaxima & veloCondutor <= (veloMaxima * 1.20)){
+            alert("Multa leve")
+        }
+        else if(veloCondutor > (veloMaxima * 1.20)){
+            alert("Multa Grave")
+        }
+
+    </script>
+</body>
+</html>

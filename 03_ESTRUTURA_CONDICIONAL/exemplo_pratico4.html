@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let bairro 
+
+        bairro = prompt("QUAL O BAIRRO PARA ENTREGA?")
+        bairro = bairro.toLowerCase()
+        
+        if(bairro === "antares"){
+            alert("Taxa de entrega: R$7,00")
+        }
+        else if(bairro === "barro duro"){
+            alert("Taxa de entrega: R$5,00")
+        }
+        else if(bairro === "bebedouro"){
+            alert("Taxa de entrega: R$8,00")
+        }
+        else if(bairro === "Centro"){
+            alert("Taxa de entrega: R$10,00")
+        }
+        else if(bairro === "pajuçara" || bairro === "ponta verde" ||bairro === "jatiuca"){
+            alert("Taxa de entrega: R$15,00")
+        }
+        else if(bairro === "benedito bentes"){
+            alert("Taxa de entrega: R$5,00")
+        }
+        else if(bairro === "clima bom"){
+            alert("Taxa de entrega: R$5,00")
+        }
+
+        else{
+            alert("Digite o bairro corretamente")
+        }
+    </script>
+</body>
+</html>

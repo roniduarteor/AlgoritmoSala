@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let valor1, valor2
+
+        valor1 = Number(prompt("Informe o valor 1:"))
+        valor2 = Number(prompt("Informe o valor 2:"))
+
+        console.log(valor1)
+        console.log(valor2)
+
+        if(valor1 === 0 || isNaN(valor1)){
+            alert(`Valor ${valor1} não é válio para o sistema`)
+            location.reload()
+        }
+        if(valor2 === 0 || isNaN(valor2)){
+            alert(`Valor ${valor2} não é válio para o sistema`)
+            location.reload()
+        }
+
+// Lógica
+        if(valor1 > valor2){
+            alert(`Maior valor: ${valor1}`)
+        }
+        else if(valor2 > valor1){
+            alert(`Maior valor: ${valor2}`)
+        }
+        else{
+            alert(`Não é possivel fazer a compração entre os valores [${valor1}] - [${valor2}]`)
+            location.reload()
+        }
+
+    </script>
+</body>
+</html>

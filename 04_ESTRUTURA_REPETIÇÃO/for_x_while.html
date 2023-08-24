@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let numero = 1
+
+        while(numero != 8){
+            document.write(`${numero} \n`)
+            console.log(`Contador = ${numero}`)
+            numero = Math.floor(Math.random(numero) * 9) // por 9 pois ele vai do 0 até o 9, se fosse por 8 seria do 0 até o 7
+        }
+        document.write(`Contador = ${numero}`)
+
+        for(let i = 1; 1 <= 10; i++){
+            console.log(`Valor de i: ${i}`)
+        }
+        console.log(`Valr de i:${i} para sair do laço`)
+
+    </script>
+</body>
+</html>
