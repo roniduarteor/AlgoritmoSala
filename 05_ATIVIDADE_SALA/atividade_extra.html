@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let idade, idadeSoma = 0, mediaSoma, maioresDeIdade = 0
+            document.write("MAIORES DE IDADE")
+        for(let i = 1; i <= 10; i++){
+            
+            do{
+                idade = Number(prompt("Insira a idade:"))
+                    if(isNaN(idade) || idade <= 0){
+                        alert("Digite uma idade válida!")
+                    }
+            }while(isNaN(idade) || idade <= 0)
+            
+            idadeSoma = idadeSoma + idade
+
+            if(idade >= 18){
+                maioresDeIdade++
+                document.write(`<br>Pessoa [${i}] - [${idade}]`)
+            }
+        }
+        mediaIdade = idadeSoma / 10
+
+        document.write(`<br>Total de idades: [${idadeSoma}] // Média idades: [${mediaIdade}] // [${maioresDeIdade}] são maiores de`)
+        // alternativa: Média idades: [${mediaIdade}] = Média idades: [${idadeSoma / 10}] fazer a operação dentro do document.write
+
+    </script>
+</body>
+</html>
