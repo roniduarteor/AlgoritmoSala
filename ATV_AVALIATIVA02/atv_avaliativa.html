@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* 
+        em uma fábrica trabalham homens e mulheres divididos em três classes:
+
+        . trabalhadores que fazem até 20 peças por mês - classe três (1)
+        . trabalhadores que fazem de 21 a 30 peças por mês - classe dois (2)
+        . trabalhadores que fazem mais que 30 peças por mês - classe um (3)
+
+        A classe 1 recebe o salário mínimo. A classe 2 recebe o salário minimo mais 3% desse salário por peça, acima das 20 peças iniciais. A classe 3 recebe o salário mínimo e mais 5% deste salário por peça, acima das 30 peças iniciais.
+
+        Faça um programa que receba o número do operário (identificador / matrícula). O número de peças fabricadas por mês, o sexo do operário e também calcule e mostre:
+
+        . o número do operário e seu salário
+        . o total da folha de pagamento da fábrica
+        . o número total de peças fabricadas por mês
+        . a média de peças fabricadas pelas mulheres
+        . o número do operário ou operária de maior salário
+
+        a fábrica possui 15 operários
+        */
+
+        let identificador, pecasFabricadas, sexoOperario, salarioMinimo, pecasBonus, porcentagemExtra, bonificacao, salarioTotal, folhaDePagamento = 0, pecasTotais = 0, pecasFabMasc = 0, pecasFabFem = 0, qtdHomens = 0, qntdMulheres = 0, maiorSalario = 0, idMaiorSalario = 0
+
+        salarioMinimo = Number(prompt(`SALÁRIO MÍNIMO: `))
+
+        for(let i = 1; i <= 15; i++){ // repetir isso até que conclua o processo dos 15 funcionários
+        do{
+            identificador = Number(prompt("[ID] do operário:"))
+                if(isNaN(identificador) || identificador < 0){
+                    alert(`Digite um número válido para fazer a identificação`)
+                }
+        }while(isNaN(identificador) || identificador < 0)
+
+        
+        
+        do{
+        
+            pecasFabricadas = Number(prompt(`QUANTIDADE DE [PEÇAS] FABRICADAS // OPERÁRIO - [${identificador}]`))
+                if(isNaN(pecasFabricadas) || pecasFabricadas <= 0){
+                    alert(`Digite um número de peças válidas!`)
+                }
+        }while(isNaN(pecasFabricadas) || pecasFabricadas <= 0)
+
+        
+        sexoOperario = Number(prompt(`SEXO DO OPERÁRIO [${identificador}] // [1] para masculino ou [2] para feminino`))
+        // tentei validar como está abaixo mas mesmo digitando 1 ou 2 dizia que estava errado
+
+        
+        /*do{
+            
+            sexoOperario = Number(prompt(`SEXO DO OPERÁRIO [${identificador}] // [1] para masculino ou [2] para feminino`))
+                
+            if(isNaN(sexoOperario) || sexoOperario != 1 || sexoOperario != 2){
+                    alert("Digite apenas [1] ou [2]!")
+                }
+
+        }while(isNaN(sexoOperario) || sexoOperario != 1 || sexoOperario != 2)*/
+        
+
+
+        if(pecasFabricadas <= 20){
+                salarioTotal = salarioMinimo
+                document.write(`<br>O operário [${identificador}] é da [classe três(1)] - Salário de: ${salarioMinimo}`)
+            }
+
+            else if(pecasFabricadas >= 21 & pecasFabricadas <= 30){
+                pecasBonus = pecasFabricadas - 20
+
+                porcentagemExtra = salarioMinimo * 0.3
+
+                bonificacao = porcentagemExtra * pecasBonus
+
+                salarioTotal = salarioMinimo + bonificacao
+                document.write(`<br>O operário [${identificador}] é da [classe dois(2)] - Salário de: ${salarioMinimo} // bônus de: ${bonificacao}<br>  Total: ${salarioTotal}`)
+            }
+
+            else if(pecasFabricadas > 30){
+                pecasBonus = pecasFabricadas - 30
+
+                porcentagemExtra = salarioMinimo * 0.5
+
+                bonificacao = porcentagemExtra * pecasBonus
+
+                salarioTotal = salarioMinimo + bonificacao
+                document.write(`<br>O operário [${identificador}] é da [classe um(3)] - Salário de: ${salarioMinimo} // bônus de: ${bonificacao}<br>  Total: ${salarioTotal}`)
+            }
+
+                if(sexoOperario === 1){
+                    qtdHomens++
+                    pecasFabMasc = (pecasFabMasc + pecasFabricadas) / qtdHomens
+                }
+                else if(sexoOperario === 2){
+                    qntdMulheres++
+                    pecasFabFem = (pecasFabFem + pecasFabricadas) / qntdMulheres
+                }
+
+                        if(salarioTotal > maiorSalario){
+                            maiorSalario = salarioTotal
+                            idMaiorSalario = identificador
+                        }
+
+            folhaDePagamento = folhaDePagamento + salarioTotal
+
+            pecasTotais = pecasTotais + pecasFabricadas
+        }
+
+        document.write(`<br><br> TOTAL - FOLHA DE PAGAMENTO: ${folhaDePagamento}<br>TOTAL - PEÇAS FABRICADAS MÊS: ${pecasTotais}<br>MÉDIA - PEÇAS FABRICADAS POR [HOMENS]: ${pecasFabMasc}<br>MÉDIA - PEÇAS FABRICADAS POR [MULHERES]: ${pecasFabFem}<br><br> MAIOR SALÁRIO - OPERÁRIO: [${idMaiorSalario}] SALÁRIO: ${maiorSalario}`)
+    </script>
+</body>
+</html>
