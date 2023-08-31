@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* Crie um programa que receba os salários dos funcionários e os armazene em um array. Depois exclua o menor e o maior salário e mostre a média dos demais */
+
+        let salario = [], maiorS = 0, menorS = 10000000000000000000, média = 0, funcionario = 1
+
+        do{
+            salario = Number(prompt(`Insira o salário do ${funcionario}º funcionário:`))
+
+            if(salario == '0'){
+                let sair = confirm("Deseja finalizar?")
+                    if(sair){
+                        break
+                    }else{
+                        continue
+                    }
+            }
+
+            if(salario > maiorS){
+                maiorS = salario
+            }
+            else if(salario < menorS){
+                menorS = salario
+            }
+
+            document.write(`Funcionário - [${salario}]<br>`)
+
+            media = (((media + salario) - maiorS) - menorS) / funcionario
+
+            funcionario++
+
+        }while(true)
+
+        document.write(`_________________<br><br> Média = ${media}`)
+
+    </script>
+</body>
+</html>
