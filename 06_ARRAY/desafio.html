@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let vetor = []
+        let j = 0
+        vetor[j] = 0
+
+        for(let i = 0; i < 4; i++){
+
+            vetor[i] = Number(prompt(`Insira um valor:`))
+
+            if(vetor[i] > vetor[j]){
+                vetor[j] = vetor[i]
+                document.write(`${vetor[j]}<br>`)
+                j++
+            }else{
+                document.write(`${vetor[i]}`)
+            }
+
+
+        }
+        
+
+
+
+    </script>
+</body>
+</html>

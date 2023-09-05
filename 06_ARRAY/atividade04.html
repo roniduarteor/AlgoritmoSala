@@ -9,39 +9,39 @@
 <body>
     <script>
 
-        /* Crie um programa que receba os salários dos funcionários e os armazene em um array. Depois exclua o menor e o maior salário e mostre a média dos demais */
+        let vetorUm = [] 
+        let vetorDois = []
+        let vetorTres = []
+        let j = 0
+        
 
-        let salario = [], maiorS = 0, menorS = 10000000000000000000, média = 0, funcionario = 1
+        for(let i = 0; i < 5; i++){
+            vetorUm[i] = Number(prompt(`Digite um valor [vetor 1]:`))
+            vetorTres[j] = vetorUm[i]
+            j++
+        }
+        for(let i = 0; i < 5; i++){
+            vetorDois[i] = Number(prompt(`Digite um valor [vetor 2]:`))
+            vetorTres[j] = vetorDois[i]
+            j++
+        }
 
-        do{
-            salario = Number(prompt(`Insira o salário do ${funcionario}º funcionário:`))
+        console.log(vetorUm)
+        console.log(vetorDois)
 
-            if(salario == '0'){
-                let sair = confirm("Deseja finalizar?")
-                    if(sair){
-                        break
-                    }else{
-                        continue
-                    }
+        for(let i = 0; i < vetorTres.length; i++){
+
+            if(vetorUm[i] >= vetorTres[i]){
+                
+                vetorTres[i] = vetorUm[i]
+                document.write(`${vetorTres[i]}<br>`)
             }
-
-            if(salario > maiorS){
-                maiorS = salario
+            if(vetorDois[i] >= vetorTres[i]){
+                
+                vetorTres[i] = vetorDois[i]
+                document.write(`${vetorTres[i]}<br>`)
             }
-            else if(salario < menorS){
-                menorS = salario
-            }
-
-            document.write(`Funcionário - [${salario}]<br>`)
-
-            media = (((media + salario) - maiorS) - menorS) / funcionario
-
-            funcionario++
-
-        }while(true)
-
-        document.write(`_________________<br><br> Média = ${media}`)
-
+        }
     </script>
 </body>
 </html>

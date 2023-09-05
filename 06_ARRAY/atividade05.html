@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let vetor = [], vetorPositivo = [], vetorNegativo = []
+        let j = 0
+
+        for(let i = 0; i < 8; i++){
+            vetor[i] = Number(prompt(`Insira um valor [+] ou [-]:`))
+
+            vetorPositivo[j]
+            vetorNegativo[j]
+
+            if(vetor[i] >= 0){
+                vetorPositivo = vetor
+                document.write(`Positivo - [${vetorPositivo[i]}]<br>`)
+            }
+            else if(vetor[i] < 0){
+                vetorNegativo = vetor
+                document.write(`Negativo - [${vetorNegativo[i]}]<br>`)
+            }
+            j++
+        }
+
+    </script>
+</body>
+</html>
