@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* Crie um programa para corrigir provas de múltipla escolha. Cada prova têm 10 questões e cada questão vale um ponto.
+        O primeiro conjunto de dados são os números dos alunos e as respostas que deram às questões. Calcule e mostre:
+
+        - o numero de nota de cada aluno
+        - a porcentagem de aprovação, nota mínima 6
+        */
+
+        let gabarito = [], resposta = [], questaoAluno = []
+        let aluno, pontos = 0, totalAprovados = 0
+        let questaoGabarito = 1 // só pra deixar arrumado
+        let percAp
+
+        // definir o gabarito da prova
+        for(let i = 0; i < 10; i++){
+            gabarito[i] = prompt(`[GABARITO]\n${questaoGabarito}º questão: `)
+            document.write(`${questaoGabarito}º questão: ${gabarito[i]}<br>`)
+            questaoGabarito++
+        }
+
+        for(let i = 0; i < 4; i++){
+            aluno = prompt(`Digite o nome do aluno(a):`)
+            pontos = 0
+                for(let j = 0; j < 10; j++){
+                resposta[j] = prompt(`Insira a alternativa marcada na [${j+1}º] questão:`)
+
+                    if(resposta[j] === gabarito[j]){
+                       pontos++
+                    }
+                }
+                if(pontos>=6){
+                        totalAprovados++
+                    }
+                document.write(`A nota do aluno ${aluno} foi ${pontos}<br>`)
+        }
+        percAp = (totalAprovados * 100) / 10
+
+    </script>
+</body>
+</html>

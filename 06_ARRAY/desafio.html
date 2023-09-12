@@ -10,26 +10,29 @@
     <script>
 
         let vetor = []
-        let j = 0
-        vetor[j] = 0
+        let aux
 
         for(let i = 0; i < 4; i++){
 
             vetor[i] = Number(prompt(`Insira um valor:`))
-
-            if(vetor[i] > vetor[j]){
-                vetor[j] = vetor[i]
-                document.write(`${vetor[j]}<br>`)
-                j++
-            }else{
-                document.write(`${vetor[i]}`)
-            }
-
+        
+            // console.log(vetor.sort((a,b)=>b-a)) gera os números decrescentes, [a - b] -> crescente
 
         }
-        
+
+        document.write(`Array antes da ordenação [${vetor}]<br>`)
 
 
+        for(let i =0; i<4; i++){
+            for(let j = 0; j<4; j++){
+                if(vetor[j] < vetor[j+1]){
+                    aux = vetor[j]
+                    vetor[j] = vetor[j+1]
+                    vetor[j+1] = aux
+                }
+            }
+        }
+        console.log(vetor)
 
     </script>
 </body>
