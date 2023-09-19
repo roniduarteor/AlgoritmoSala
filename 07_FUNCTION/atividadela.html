@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* 
+        1- informar @
+        2- nº de seguidores
+        3- produto
+        4- valor do produto
+        5- se irá postar um story
+
+        DESCONTOS:
+        5k - 5%
+        20k - 15%
+        50k - 15%
+        100k - 25%
+
+        ADICIONAIS:
+        postar story - 5%
+        reels - 10%
+
+        adicionais só se NumSeguidores >= 20k
+        */
+
+        let arroba, seguidores, produto, valorDoProduto, total
+        
+        //arroba = prompt(`Informe o seu [@]`)
+        seguidores = Number(prompt(`Informe seu número de seguidores: `))
+       // produto = Number(prompt(`Qual produto será: `))
+        valorDoProduto = Number(prompt(`Insira o valor do produto`))
+
+        if(seguidores > 20000){
+            let post = prompt(`Postar: \n [1] - Stories\n [2] - Reels\n [3] - Nada`)
+            if(post === 1){
+                
+            }
+        }
+
+        document.write(`Valor do produto: ${valorDoProduto}<br>Valor com desconto: ${descontoNoProdutoComSeguidores(valorDoProduto).toFixed(descontoNoProdutoComSeguidores)}`)
+
+        function descontoNoProdutoComSeguidores(desconto){
+            if(seguidores >= 5000 && seguidores < 20000){
+                desconto = valorDoProduto * 0.95
+            }
+            else if(seguidores >= 20000 && seguidores < 50000){
+                desconto = valorDoProduto * 0.90
+            }
+            else if(seguidores >= 50000 && seguidores < 100000){
+                desconto = valorDoProduto * 0.85
+            }
+            else if(seguidores >= 100000){
+                desconto = valorDoProduto * 0.75
+            }
+            else if(seguidores < 5000){
+                alert("Quantidade de seguidores insuficiente")
+            }
+            return desconto
+        }
+
+    </script>
+</body>
+</html>

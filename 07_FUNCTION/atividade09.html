@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        3 vetores - 5 posições;
+
+        1º - Nome de 5 funcionários
+        2º - Salário
+        3º - tempo de serviço
+
+        RELATÓRIOS:
+        1º - nomes que NÃO terão AUMENTO
+        2º - nomes e novos salários dos funcionários que terão aumento
+
+        AUMENTOS:
+        se -> tempo de serviço > 5 anos || salario < 400,00
+
+        se -> tempo de serviço > 5 anos && salario < 400,00
+               -> 35% aumento
+        
+        se -> tempo de serviço > 5 anos
+               -> 25% aumento
+
+        se -> salario < 400,00
+               -> 15% aumento
+        */
+
+        let nomes = [], salario = [], tempoDeServico = []
+        let novoSalario
+
+        for(let i = 0; i < 5; i++){
+            nomes[i] = prompt(`Insira o nome do [${i+1}]º funcionário`)
+            salario[i] = Number(prompt(`Insira o salário do [${i+1}]º funcionário`))
+            tempoDeServico[i] = Number(prompt(`Insira o tempo de serviço do [${i+1}]º funcionário em anos`))
+        }
+        
+
+            for(let i = 0; i < 5; i++){
+                if(salario[i] < 400 && tempoDeServico[i] > 5){
+                    document.write(`<br>O funcionário [${nomes[i]}] receberá aumento`)
+
+                    if(tempoDeServico[i] > 5 && salario[i] < 400){
+                        novoSalario = salario[i] * 1.35 //aumento de 35%
+                        document.write(` - Novo salário: R$${novoSalario}`)
+                    }
+                    else if(tempoDeServico[i] > 5){
+                        novoSalario = salario[i] * 1.25
+                        document.write(` - Novo salário: R$${novoSalario}`)
+                    }
+                    else if(salario[i] < 400){
+                        novoSalario = salario[i] * 1.15
+                        document.write(` - Novo salário: R$${novoSalario}`)
+                    }
+                }else{
+                    document.write(`<br>O funcionário [${nomes[i]}] NÃO receberá aumento `)
+                }
+            }
+
+
+    </script>
+</body>
+</html>
